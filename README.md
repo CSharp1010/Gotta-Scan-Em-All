@@ -66,17 +66,16 @@ Smooth transition from scanning → recognition → editing.
 
 🧠 Architecture Overview
 Managers/
-├── CameraManager.swift          # AVFoundation camera management
-└── ImageProcessor.swift         # Vision-based image processing
-
+├── CameraManager.swift # AVFoundation camera management
+└── ImageProcessor.swift # Vision-based image processing
 Services/
 └── CardRecognitionService.swift # OCR and card identification
-
 Views/
-├── CameraView.swift             # Main camera interface
-├── CameraPreviewView.swift      # Live preview layer
-├── ImagePicker.swift            # Photo library integration
-└── ManualEditView.swift         # Manual card detail editing
+├── CameraView.swift # Main camera interface
+├── CameraPreviewView.swift # Live preview layer
+├── ImagePicker.swift # Photo library integration
+└── ManualEditView.swift # Manual card detail editing
+
 🔗 Pokémon TCG API Integration
 Client: PokemonTCGAPIService
 Base URL: https://api.pokemontcg.io/v2
