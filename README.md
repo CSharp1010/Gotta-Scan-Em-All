@@ -1,138 +1,241 @@
-# Gotta-Scan-Em-All
-**Mobile App for Collecting /Scanning/ Tracking your Pokemon Cards **
+**🃏 Gotta Scan 'Em All — Pokémon Card Digital Vault**
 
-🃏 Gotta Scan 'Em All — Pokémon Card Digital Vault
-A SwiftUI iOS app for scanning, collecting, and managing Pokémon cards in a digital vault.
-Built with modern iOS frameworks and real-time camera recognition powered by Vision and the Pokémon TCG API.
+A SwiftUI iOS app for scanning, recognizing, and managing Pokémon cards in a digital vault.
+Powered by real-time camera recognition, Vision, and the Pokémon TCG API.
 
-🎯 Features
-Core Functionality
-Card Scanning: Use your device’s camera to scan and identify Pokémon cards.
-Digital Vault: Store and organize your cards in a beautiful, searchable interface.
-Manual Entry: Add cards manually when scanning isn’t available.
-Collection Management: Search, filter, and categorize your Pokémon cards.
-Collection Tools
-Search & Filter: Find cards by name, set, rarity, or type.
-Statistics: Track collection value, rarity distribution, and progress.
-Export/Import: Backup and restore your digital vault data.
-
+**📑 Table of Contents**
 📱 App Structure
-Tab	Description
-Scanner	Camera interface for scanning cards.
-Collection	Grid view of collected cards with search and filters.
-Statistics	Analytics and collection insights.
-Settings	App configuration, backups, and data management.
-
+🎨 Theme Management
 🧩 Card Information
-Each card contains comprehensive details:
-Basic Info: Name, set, number, rarity.
-Game Stats: HP, types, attacks, weaknesses, resistances.
-Market Data: TCGPlayer prices and market value.
-Meta Info: Artist, date added, and collection status.
-
 ⚙️ Technical Architecture
-Data Models
-PokemonCard: Core card data structure.
-CardCollection: Observable collection manager.
-CardRarity: Enum for card rarity levels.
-PokemonType: Enum for Pokémon types with color and icon mapping.
-Technologies Used
-SwiftUI — Modern declarative UI framework.
-UserDefaults — Local data persistence.
-AVFoundation — Camera integration.
-Vision Framework — Image and text recognition.
-Pokémon TCG API (v2) — Real card data and pricing.
-
-📸 Real Camera Implementation — Complete! 🎉
-Implemented Features
-Camera & Permissions
-Full AVFoundation integration for real-time camera sessions.
-Automatic permission handling and user-friendly error recovery.
-Live preview with custom overlay and scanning guides.
-Front/back camera switching support.
-Image Processing & Recognition
-Vision Framework OCR for card text recognition.
-Rectangle detection for auto-cropping and perspective correction.
-Image enhancement (contrast, brightness, saturation).
-Photo Library integration for selecting existing images.
-Smart Card Recognition
-Text extraction → name & set recognition via pattern matching.
-Confidence scoring for recognition accuracy.
-Fallback handling and manual edit override when uncertain.
-User Experience
-Professional UI with scanning guides and live feedback.
-Real-time progress and error indicators.
-Smooth transition from scanning → recognition → editing.
-
+📸 Camera & Recognition
 🧠 Architecture Overview
-Managers/
-├── CameraManager.swift # AVFoundation camera management
-└── ImageProcessor.swift # Vision-based image processing
-Services/
-└── CardRecognitionService.swift # OCR and card identification
-Views/
-├── CameraView.swift # Main camera interface
-├── CameraPreviewView.swift # Live preview layer
-├── ImagePicker.swift # Photo library integration
-└── ManualEditView.swift # Manual card detail editing
-
 🔗 Pokémon TCG API Integration
-Client: PokemonTCGAPIService
-Base URL: https://api.pokemontcg.io/v2
-Endpoints
-GET /cards — Search cards (e.g., q=name:*pikachu* with pagination).
-GET /cards/{id} — Fetch a specific card by ID.
-GET /sets — Retrieve list of card sets.
-Recognition Flow
-The CardRecognitionService uses the PokémonTCGAPIService via the PokemonCardSearching protocol to:
-Search the API using text detected by the camera (OCR).
-Convert PokemonTCGCard responses into the app’s internal PokemonCard model.
-Extract pricing data from the tcgplayer.prices fields.
-
 🧪 Testing Recommendations
-Test on real devices (camera required).
-Try different cards for recognition accuracy.
-Deny/allow camera permissions to test error handling.
-Test photo library imports and manual entry edits.
-
 🚀 Getting Started
-Open Project: Gotta Scan 'Em All.xcodeproj in Xcode.
-Build & Run: Choose your target device and run.
-Load Sample Data: Go to Settings → Load Sample Data.
-Start Collecting: Use the Scanner tab to scan and save cards.
-
 🧩 Sample Data
-Includes classic Base Set examples:
-Pikachu (Common)
-Charizard (Rare Holo)
-Blastoise (Rare Holo)
-Venusaur (Rare Holo)
-Mewtwo (Rare Holo)
-And more!
-
 🔮 Future Enhancements
-Phase 2 – Recognition & API
-Pokémon TCG API lookup for richer data.
-Barcode scanning and price tracking.
-Machine learning for improved recognition accuracy.
-iCloud sync for cross-device collection.
-Phase 3 – Advanced Features
-Batch scanning for multiple cards.
-Condition grading and market tracking.
-Deck building and tournament tracking.
-Social sharing and collection trading.
-
 💡 Design Philosophy
-Local-First: Offline-first design using UserDefaults.
-SwiftUI-Native: 100% SwiftUI interface for modern UX.
-Modular Architecture: Models, Views, and Services are cleanly separated.
-Extensible: Easy to add new card types, sets, and recognition logic.
-
 🤝 Contributing
-This project was built for learning and experimentation with SwiftUI, Vision, and camera frameworks.
-Feel free to fork, learn from, or extend this app for your own Pokémon collection projects!
-
+👥 Team
 🪪 License
-This project is for educational purposes only.
-Pokémon and all related properties are trademarks of Nintendo, Game Freak, and Creatures Inc.
 
+**🎯 Core Functionality**
+
+Card Scanning using live camera
+
+Digital Vault storage
+
+Manual Entry option
+
+Advanced search, filter, and categorization tools
+
+**📚 Collection Tool**
+
+Search cards by name/set/type
+
+Collection statistics and analytics
+
+Import/Export collection backups
+
+**📱 App Structure**
+
+Tab	Description
+
+Scanner	Camera interface for scanning cards
+
+Collection	Grid of collected cards
+
+Statistics	Collection analysis
+
+Settings	App preferences and backup tools
+
+**🎨 Theme Management**
+
+The app supports System, Light, and Dark appearance modes with persistent user preferences.
+
+**🧠 Theme System Overview**
+
+Feature	Description
+
+Theme Options	System, Light, Dark
+
+Persistence	Saved using UserDefaults
+
+SwiftUI Integration	Applies ColorScheme globally
+
+UI Support	Picker in Settings tab
+
+**🧩 Card Information**
+
+Each card includes:
+
+Name, set, number, rarity
+
+HP, types, weaknesses, attacks
+
+Market values from TCGPlayer
+
+Artist and date added
+
+**⚙️ Technical Architecture**
+
+📁 Data Models
+
+PokemonCard
+
+CardCollection
+
+CardRarity
+
+PokemonType
+
+**🧰 Technologies Used**
+
+SwiftUI
+
+UserDefaults
+
+AVFoundation
+
+Vision Framework
+
+Pokémon TCG API v2
+
+**📸 Camera & Recognition**
+Camera & Permissions - 
+Full AVFoundation camera session - 
+Live preview with scanning guides - 
+Permission error handling - 
+Camera switching - 
+Image Processing - 
+OCR using Vision - 
+Card rectangle detection - 
+Auto-cropping & enhancement - 
+Perspective correction - 
+Photo library integration - 
+Recognition Intelligence - 
+OCR text → API search - 
+Name / set matching - 
+Confidence scoring - 
+Manual correction workflow - 
+User Flow - 
+Open Scanner - 
+Position Card - 
+Capture - 
+Auto-recognize - 
+Review - 
+Edit - 
+Save to collection 
+
+**🧠 Architecture Overview**
+Managers - 
+CameraManager.swift - 
+ImageProcessor.swift - 
+Services - 
+CardRecognitionService.swift - 
+Views - 
+CameraView.swift - 
+CameraPreviewView.swift - 
+ImagePicker.swift - 
+ManualEditView.swift - 
+🔗 Pokémon TCG API Integration - 
+Base URL: https://api.pokemontcg.io/v2 - 
+Client: PokemonTCGAPIService - 
+Endpoints - 
+/cards – Search cards by query - 
+/cards/{id} – Fetch specific card details - 
+/sets – List all card sets - 
+Recognition Flow - 
+OCR extracts text from the card - 
+Search request sent to Pokémon TCG API -
+API results converted to app’s internal models -
+Pricing read from tcgplayer.prices
+
+**🧪 Testing Recommendations**
+
+Test on real devices
+
+Try different lighting conditions
+
+Import images from photo library
+
+Validate API search accuracy
+
+Test camera permission denial flows
+
+**🚀 Getting Started**
+
+Open the Xcode project
+
+Select a physical device
+
+Build and run
+
+Load sample data in Settings
+
+Start scanning cards
+
+**🧩 Sample Data**
+
+The app includes iconic base-set cards such as:
+Pikachu
+Charizard
+Blastoise
+Venusaur
+Mewtwo
+And more
+
+**🔮 Future Enhancements**
+
+Phase 2 — Recognition & API
+
+Barcode scanning
+
+Machine learning card model
+
+iCloud sync support
+
+Phase 3 — Advanced Features
+
+Batch scanning
+
+Condition/grade detection
+
+Deck builder
+
+Social sharing and trading
+
+Tournament tracking
+
+**💡 Design Philosophy**
+
+Local-first storage
+
+Fully SwiftUI-native
+
+Modular structure
+
+Built for extensibility
+
+**🤝 Contributing**
+
+Created as a SwiftUI learning and collaboration project.
+
+Open for forks, customizations, and extensions.
+
+**👥 Team**
+
+Gotta Scan ’Em All Development Team
+
+Jersain Hermosillo — iOS Developer / Project Lead
+
+Bradley Everett - UI Developer / PowerPoint Developer
+
+Casey Sharp - UI Developer / ReadMe Developer
+
+Anthonie Quintela - UI Developer
+
+**🪪 License**
+This project is for educational purposes only.
+Pokémon and related trademarks belong to Nintendo, Game Freak, and Creatures Inc.
