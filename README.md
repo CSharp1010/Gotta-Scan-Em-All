@@ -3,7 +3,9 @@
 A SwiftUI iOS app for scanning, recognizing, and managing Pokémon cards in a digital vault.
 Powered by real-time camera recognition, Vision, and the Pokémon TCG API.
 
-**📑 Table of Contents**
+**📑 Table of Contents** :
+🎯 Core Functionality
+📚 Collection Tool
 📱 App Structure
 🎨 Theme Management
 🧩 Card Information
@@ -102,7 +104,7 @@ Vision Framework
 
 Pokémon TCG API v2
 
-**📸 Camera & Recognition**
+**📸 Camera & Recognition**:
 Camera & Permissions - 
 Full AVFoundation camera session - 
 Live preview with scanning guides - 
@@ -128,7 +130,7 @@ Review -
 Edit - 
 Save to collection 
 
-**🧠 Architecture Overview**
+**🧠 Architecture Overview**:
 Managers - 
 CameraManager.swift - 
 ImageProcessor.swift - 
@@ -224,9 +226,7 @@ Created as a SwiftUI learning and collaboration project.
 
 Open for forks, customizations, and extensions.
 
-**👥 Team**
-
-Gotta Scan ’Em All Development Team
+**👥 Development Team**
 
 Jersain Hermosillo — iOS Developer / Project Lead
 
@@ -237,5 +237,7 @@ Casey Sharp - UI Developer / ReadMe Developer
 Anthonie Quintela - UI Developer
 
 **🪪 License**
+
 This project is for educational purposes only.
+
 Pokémon and related trademarks belong to Nintendo, Game Freak, and Creatures Inc.
