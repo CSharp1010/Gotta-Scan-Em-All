@@ -232,9 +232,9 @@ Jersain Hermosillo — iOS Developer / Project Lead
 
 Bradley Everett - UI Developer / PowerPoint Developer
 
-Casey Sharp - UI Developer / ReadMe Developer
+Casey Sharp - Card Scanner Developer / ReadMe Developer
 
-Anthonie Quintela - UI Developer
+Anthonie Quintela - Card Detail Page Developer
 
 **🪪 License**
 
